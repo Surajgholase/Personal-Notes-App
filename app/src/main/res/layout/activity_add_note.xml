@@ -1,27 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/cream">
 
-    <EditText
-        android:id="@+id/editTitle"
-        android:hint="Title"
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent">
 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_media_previous"
+             />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_more"
+            />
+    </LinearLayout>
+
+    <!-- Note Title -->
     <EditText
-        android:id="@+id/editContent"
-        android:hint="Write your note here..."
+        android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="top"
-        android:minLines="5"/>
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:hint="Title..."
+        android:inputType="textCapSentences"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/robomono"/>
 
-    <Button
-        android:id="@+id/btnSave"
-        android:text="Save"
+    <!-- Note Content -->
+    <EditText
+        android:id="@+id/etContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@id/etTitle"
+        android:layout_above="@+id/bottomBar"
+        android:hint="Start typing..."
+        android:gravity="top"
+        android:padding="16dp"
+        android:background="@android:color/transparent"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        android:fontFamily="@font/robomono"/>
+
+    <!-- Bottom Toolbar -->
+    <RelativeLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FAF7F2">
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="100dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/checkbox_on_background" />
+
+        <ImageButton
+            android:id="@+id/btnMic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="100dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_btn_speak_now" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,21 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FAF7F2"
+    android:padding="24dp">
 
-    <ListView
-        android:id="@+id/listViewNotes"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btnAdd" />
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quick Notes"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/robomono"/>
 
+    <!-- Black Button -->
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnNewNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Note"
-        android:layout_alignParentBottom="true"
-        android:background="@color/purple_500"
-        android:textColor="@android:color/white"/>
+        android:text="New note"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/robomono"/>
+    <!-- Outline Button -->
+    <Button
+        android:id="@+id/btnViewNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Notes"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:background="@drawable/btn_outline"
+        android:padding="12dp"
+        android:fontFamily="@font/robomono" />
 
-</RelativeLayout>
+</LinearLayout>

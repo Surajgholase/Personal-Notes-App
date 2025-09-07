@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.personalnotes"
+    namespace = "com.janba.personalnotes"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.personalnotes"
+        applicationId = "com.janba.personalnotes"
         minSdk = 21
         targetSdk = 36
         versionCode = 1
